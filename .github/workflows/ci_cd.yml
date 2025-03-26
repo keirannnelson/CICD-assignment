@@ -52,16 +52,16 @@ jobs:
     # Important step - add your environment name
     environment: PROD
     steps:
-        - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
         # Optional: List repository files to verify the docker-compose file exists
-        - name: List repository files
-          run: ls -al
+      - name: List repository files
+        run: ls -al
 
     # Step 7: Build docker image 
-        - name: Build Docker Image
-          run: |
-            docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend_flask:latest .
+      - name: Build Docker Image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/backend_flask:latest .
     # Go to dockerhub.com
     # Create a new repository - backend_flask
     # Create a new access token - <access_token>
